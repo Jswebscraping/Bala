@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Generate Numbers 1 to 100 </title>
+    <style>
+        h1 {
+            color:orange;
+            margin:20px;
+        }
+        p,button {
+            margin-left: 20px;
+            color : black;
+        }
+    </style>
+</head>
+<body style ="background:grey">
+    <h1>Generate Numbers From 1 to 100</h1>
+    <p id="Result"></p>
+    <button type="button" onclick="GenNum()">Click Here</button>
+    <script>
+        function GenNum() {
+            let number = '';
+            for(var i = 1;i <= 100;i++)
+            {
+                number = number + i + "   ";     
+            }
+            document.getElementById("Result").innerHTML = number;
+        }
+    </script>
+</body>
+</html>

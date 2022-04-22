@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Check Prime Number</title>
+        <style>
+            h1,h3,p {
+                font-weight: bold;
+                color: whitesmoke;
+            }
+            button,input {
+                border-color: blue;
+                padding: 5px;
+                background-color: skyblue;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+<body style="background-color:rgba(250, 100, 100, 0.5) ; margin-left:20px">
+
+<h3>Check If a Number is Prime Number or Not</h3>
+
+<input type="number" id="Input" value="">
+
+<p>Input number and press "Click Here" To Check if the Number is PRIME or NOT</p>
+
+<button onclick="CheckPrime()">Click Here</button>
+
+<p id="Output"></p>
+
+<script>
+function CheckPrime() {
+  var x = document.getElementById("Input").value;
+  var input = parseInt(x);
+  var flag = 1;
+  if(input > 1)
+  {
+    for(let i = 2;i<input;i++)
+    {
+      if(input % i == 0)
+      {
+        flag = 0;
+      }
+    }
+   }
+   if(flag == 1)
+   {
+    document.getElementById("Output").innerHTML = input + " Is A Prime Number";
+   }
+   else
+   {
+    document.getElementById("Output").innerHTML = input + " Is Not A Prime Number !";
+   }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Number Of Prime Numbers In A Range</title>
+        <style>
+            h1,h3,p {
+                font-weight: bold;
+                color: grey;
+            }
+            button,input {
+                border-color: darkmagenta;
+                padding: 5px;
+                background-color: pink;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+<body style="background-color:rgba(123, 198, 233, 0.5) ; margin-left:20px">
+
+<h3>Number of Prime Numbers</h3>
+<form>
+Start Number :<br><input type="number" id="Input1" value=""><br>
+End Number : <br><input type="number" id="Input2" value="">
+</form>
+
+<p>Input number and press "Click Here" <br>To Check The Number of Prime Numbers Between A Range</p>
+
+<button onclick="NumPrime()">Click Here</button>
+
+<p id="direct"></p>
+<p id="Output"></p>
+
+<script>
+function NumPrime() {
+  var x = document.getElementById("Input1").value;
+  var start = parseInt(x);
+  var x = document.getElementById("Input2").value;
+  var end = parseInt(x);
+  //Converting the user input to array
+  const input = [];
+
+  for(let i = start;i<=end;i++)
+  {
+      input.push(i);
+  }
+  let len = input.length;
+  var count = 0;
+
+  for(i = 0;i < len;i++)
+  {
+      if(CheckPrime(input[i]) == true) 
+      {
+          count++;
+      }
+  }
+  document.getElementById("Output").innerHTML = "The Number Of Prime Numbers Between " + input[0] + " and " + input[len-1] + " is " + count ;
+}  
+function CheckPrime(number)
+{
+    if(number <= 1)
+    return false;
+    for(let i = 2;i<number;i++)
+    {
+        if(number % i == 0)
+        return false;
+    }
+    return true;
+}
+</script>
+
+</body>
+</html>

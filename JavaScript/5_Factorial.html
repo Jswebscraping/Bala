@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Factorial of a Number</title>
+        <style>
+            h1,h3,p {
+                font-weight: bold;
+                color: black;
+            }
+            button,input {
+                border-color: blue;
+                padding: 5px;
+                background-color: blanchedalmond;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+<body style="background-color:bisque ; margin-left:20px">
+
+<h3>Factorial Of a Number Input</h3>
+
+<input type="number" id="Input" value="">
+
+<p>Input number and press "Click Here" To Calculate the Factorial of the Number </p>
+
+<button onclick="Factorial()">Click Here</button>
+
+<p id="Output"></p>
+
+<script>
+function Factorial() {
+  var x = document.getElementById("Input").value;
+  var input = parseInt(x);
+  var factorial = 1;
+  for(let i = 1;i<=input;i++)
+  {
+      factorial *= i;
+  }
+  document.getElementById("Output").innerHTML = factorial;
+}
+</script>
+
+</body>
+</html>

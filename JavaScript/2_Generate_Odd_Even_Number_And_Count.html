@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Generate Even and Odd Numbers </title>
+    <style>
+        h1,h2 {
+            color:orange;
+            margin:20px;
+        }
+        p,button {
+            margin-left: 20px;
+            color : black;
+        }
+        input {
+            border-color: aquamarine;
+            padding: 5px;
+            background-color: white;
+        }
+        button {
+            border-color: black;
+            padding: 5px;
+            font-weight: bold;
+        }
+    </style> 
+</head>
+<body style ="background:grey">
+    <h1>Generate Even and Odd Numbers From 1 to UserInput</h1>
+
+    <h2 id="EvenTitle"></h2>
+    <p id="Even"></p>
+    <p id="CountE"></p>
+    <p id="Evenmsg"></p>
+
+    <h2 id="OddTitle"></h2>
+    <p id="Odd"></p>
+    <p id="CountO"></p>
+    <p id="Oddmsg"></p>
+
+    <p style="font:bold">Enter a number and choose between Print Odd and Print Even</p>
+
+    <button type="button" onclick="GenEvnNum();">Print Even</button>
+    <button type="button" onclick="GenOddNum()">Print Odd</button>
+
+    <input type="number" id="Input" value="">
+
+    <script>
+    function GenEvnNum() {
+        var x = document.getElementById("Input").value;
+        var input = parseInt(x);
+        document.getElementById("EvenTitle").innerHTML = "The Even Numbers from 1 to UserInput is :"
+        var Enumber ='';
+        var count=0;
+        for(var i = 1;i <= input;i++)
+        {
+            if(i % 2 == 0)
+                {
+                    Enumber = Enumber + i + "   ";
+                    count++;
+                }   
+        }
+        document.getElementById("Even").innerHTML = Enumber;
+        document.getElementById("CountE").innerHTML = count;
+    }
+    function GenOddNum() {
+        var x = document.getElementById("Input").value;
+        var input = parseInt(x);
+        var Onumber = '';
+        var count = 0;
+        document.getElementById("OddTitle").innerHTML = "The Odd Numbers from 1 to UserInput is :"
+        for(var i = 1;i <= input;i++)
+        {
+            if(i % 2 != 0)
+            {
+                Onumber = Onumber + i + "   ";
+                count++;
+            }
+        }
+        document.getElementById("CountO").innerHTML = count;
+        document.getElementById("Odd").innerHTML = Onumber;
+    }
+       
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Result Class </title>
+    <style>
+        h1,h2,h5 {
+            color:black;
+            margin:20px;
+        }
+        p,button {
+            margin-left: 20px;
+            color : black;
+        }
+        input {
+            border-color: aquamarine;
+            padding: 5px;
+            background-color: white;
+        }
+        button {
+            border-color: black;
+            padding: 5px;
+            font-weight: bold;
+        }
+    </style> 
+</head>
+<body style ="background:rgb(138, 176, 247)">
+    <h1>Generate The Class Of Passing the Examination</h1>
+    <h2>Please enter the details below carefully !</h2>
+<form style="margin-left:20px">
+    Name :    <br><input type="text" id="name" value=""> <br>
+    English : <br><input type="number" id="english" value=""> <br>
+    Tamil :   <br><input type="number" id="tamil" value=""> <br>
+    Maths :  <br><input type="number" id="maths" value=""> <br>
+    Science : <br><input type="number" id="science" value=""> <br>
+    Social :  <br><input type="number" id="social" value=""> <br>
+    Computer Science : <br><input type="number" id="cs" value="">
+</form>
+    <table id="table"></table>
+    <h5 id="result"></h1>
+
+    <button type="button" onclick="Calculation();"> RESULT </button>
+
+    <script>
+    function Calculation() {
+        var average;
+        // Converting the User Input to Numbers
+        var name = document.getElementById("name").value;
+        var temp = document.getElementById("english").value;
+        var english = parseInt(temp);
+        var temp = document.getElementById("tamil").value;
+        var tamil = parseInt(temp);
+        var temp = document.getElementById("maths").value;
+        var maths = parseInt(temp);
+        var temp = document.getElementById("science").value;
+        var science = parseInt(temp);
+        var temp = document.getElementById("social").value;
+        var social = parseInt(temp);
+        var temp = document.getElementById("cs").value;
+        var comp_science = parseInt(temp);
+
+        // Calculation 
+        average = (english + tamil + maths + science + social + comp_science) / 6;
+
+        if(average > 95) {
+        document.getElementById("result").innerHTML = "The Student Has Obtained The First Class with Distinction";
+        }
+        else if(average > 70) {
+        document.getElementById("result").innerHTML = "The Student Has Obtained The First Class";
+        }
+        else if(average > 50) {
+        document.getElementById("result").innerHTML = "The Student Has Obtained The Second Class";
+        }
+        else {
+        document.getElementById("result").innerHTML = "The Student Is Fail. Better Luck Next Time!";
+        }
+    }
+
+
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Fibonacci Series upto .... n terms</title>
+        <style>
+            h1,h3,p {
+                font-weight: bold;
+                color: blanchedalmond;
+            }
+            button,input {
+                border-style: bold;
+                border-color: greenyellow;
+                padding: 5px;
+                background-color: grey;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+<body style="background-color:darkslategrey ; margin-left:20px">
+
+<h3>Fibonacci Series Upto ..... n Terms</h3>
+
+<input type="number" id="Input" value="">
+
+<p>Input number and press "Click Here" <br> To Calculate the Fibonacci Series upto ..... n terms</p>
+
+<button onclick="Fibonacci()">Click Here</button>
+
+<p id="Output"></p>
+
+<script>
+function Fibonacci() {
+  var x = document.getElementById("Input").value;
+  var input = parseInt(x);
+  var n1 = 0, n2 = 1;
+  var count = 0;
+  var nth;
+  if(input == 1)
+  {
+      document.getElementById("Output").innerHTML = "Fibonacci Series upto 1 terms : " + input;
+  }
+  else
+  {
+      var temp = '';
+      var result = document.getElementById("Output");
+      while(count < input)
+      {
+          temp += n1 + "    ";
+          nth = n1 + n2;
+          n1 = n2;
+          n2 = nth;
+          count++;
+      }
+      document.getElementById("Output").innerHTML =  "Fibonacci Series Upto " + input + " terms is : " + temp ;
+      
+  }
+}
+
+</script>
+
+</body>
+</html>
