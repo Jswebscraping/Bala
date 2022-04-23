@@ -1,5 +1,3 @@
-
-//Test
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
@@ -58,19 +56,10 @@ try {
                     const productRating = await a.$eval('.averageStarRating', span => span.innerText);
                     const productPrice = await a.$eval('.apexPriceToPay > span.a-offscreen', span => span.innerText);
                     const productMrp = await a.$eval('.apexPriceToPay > span.a-offscreen', span => span.innerText);
-                        //const productPrice = await a.$eval('.priceToPay > span.a-offscreen', span => span.innerText,{visible:true});
-                        //const productPrice = await a.$eval('.priceToPay > span.a-offscreen', span => span.innerText,{visible:true});
                     const productImage = await a.$eval('#imgTagWrapperId > img', img => img.src);
                     const productAvailability = await a.$eval('#availability > span', span => span.innerText);
                     const productDetails = await a.$eval('#feature-bullets > ul', li => li.innerText);
                         
-                        /*try {
-                            await a.waitForSelector('.basisPrice > span > span.a-offscreen', {waitUntil:'networkidle2'});
-                            return productMrp = a.$eval('.basisPrice > span > span.a-offscreen', span => span.innerText,{visible:true});
-                          } catch (error) {
-                            return productMrp = a.$eval('.apexPriceToPay > span.a-offscreen', span => span.innerText,{visible:true});
-                          }*/
-
                     arr.push({
                         'Product Title'      : productTitle,
                         'Product Brand'      : productBrand,
@@ -81,11 +70,11 @@ try {
                         'Product Availabilty': productAvailability,
                         'Product Details'    : productDetails,   
                     });
-                } // for loop try 
+                } 
                 catch(e) {
                     console.log('Link Error');
                 };
-            }; // for details
+            }; 
                     
             for(let j = 0;j<arr.length;j++) {
                 if(arr[i] != 0) {
@@ -93,16 +82,13 @@ try {
                         if(err){console.log(err)}
                         else{ console.log('Saved Successfully!',count); count++;};
                     });
-                }; // If
-            }; // for file
-        }; // for links length */
+                };
+            };
+        }; 
         await browser.close();
-    }; // grabDetails
+    }; 
     grabDetails();
-}  // TRY Block
+} 
 catch(e) {
     console.log("Error");
 }
-
-// #tp_price_block_total_price_ww > span:nth-child(2) > span.a-price-whole
-// .basisPrice > span > span.a-offscreen ---> MRP
